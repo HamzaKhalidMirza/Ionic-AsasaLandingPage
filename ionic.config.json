@@ -1,0 +1,7 @@
+{
+  "name": "Asasa-LandingPage",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
