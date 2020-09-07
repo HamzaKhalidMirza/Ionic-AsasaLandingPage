@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'dealer-registration',
+    loadChildren: () => import('./dealer-registration/dealer-registration.module').then( m => m.DealerRegistrationPageModule)
+  },
+  {
+    path: 'add-property',
+    loadChildren: () => import('./add-property/add-property.module').then( m => m.AddPropertyPageModule)
+  },
 ];
 
 @NgModule({

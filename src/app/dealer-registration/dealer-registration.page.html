@@ -1,0 +1,199 @@
+<ion-content>
+  <div class="section section-top">
+    <div class="overlay">
+      <div class="content">
+        <h1 class="heading">DEALERS REGISTRATION</h1>
+        <h4>DREAM YOUR HOME NOW!</h4>
+        <ion-button class="btn-normal" color="primary" expand="full"
+          >READ MORE</ion-button
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="section section-divider"></div>
+
+  <div class="section section-form">
+    <form>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div class="section-head ion-text-center">
+              <h2>DEALER INFORMATION</h2>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item lines="none" class="ion-no-padding">
+              <div class="input-group">
+                <ion-label>Name<span class="sterik">*</span></ion-label>
+                <ion-input class="input-control"></ion-input>
+              </div>
+            </ion-item>
+            <ion-item lines="none" class="ion-no-padding">
+              <div class="input-group">
+                <ion-label>Agency Name<span class="sterik">*</span>
+                </ion-label>
+                <ion-input class="input-control"></ion-input>
+              </div>
+            </ion-item>
+            <ion-item lines="none" class="ion-no-padding">
+              <div class="input-group">
+                <ion-label>Mobile<span class="sterik">*</span></ion-label>
+                <ion-input class="input-control"></ion-input>
+              </div>
+            </ion-item>
+            <ion-item lines="none" class="ion-no-padding">
+              <div class="input-group">
+                <ion-label>PTCL<span class="sterik">*</span></ion-label>
+                <ion-input class="input-control"></ion-input>
+              </div>
+            </ion-item>
+            <ion-item lines="none" class="ion-no-padding">
+              <div class="input-group">
+                <ion-label>Pffice Address<span class="sterik">*</span>
+                </ion-label>
+                <ion-input class="input-control"></ion-input>
+              </div>
+            </ion-item>
+            <ion-item lines="none" class="ion-no-padding">
+              <div class="input-group">
+                <ion-label>Number of Employees<span class="sterik">*</span></ion-label>
+                <ion-input class="input-control"></ion-input>
+              </div>
+            </ion-item>
+            <ion-item lines="none" class="ion-no-padding">
+              <div class="input-group">
+                <ion-label>Working Since<span class="sterik">*</span>
+                </ion-label>
+                <ion-input class="input-control"></ion-input>
+              </div>
+            </ion-item>
+            <ion-item lines="none" class="ion-no-padding">
+              <div class="input-group">
+                <ion-label>Dealing in Areas<span class="sterik">*</span>
+                </ion-label>
+                <ion-input class="input-control"></ion-input>
+              </div>
+            </ion-item>
+            <ion-item lines="none" class="ion-no-padding">
+              <div class="input-group">
+                <ion-label>Presence in other cities?</ion-label>
+                <ion-row>
+                  <ion-col offset="1" size="5">
+                    <ion-button
+                      class="pre-btn btn-normal"
+                      [class.btn-yes]="citiesSelection"
+                      [class.btn-no]="!citiesSelection"
+                      expand="full"
+                      (click)="selectCity()"
+                      >Yes</ion-button
+                    >
+                  </ion-col>
+                  <ion-col size="5">
+                    <ion-button
+                      class="pre-btn btn-normal btn-no"
+                      [class.btn-yes]="!citiesSelection"
+                      [class.btn-no]="citiesSelection"
+                      expand="full"
+                      (click)="unSelectCity()"
+                      >No</ion-button
+                    >
+                  </ion-col>
+                </ion-row>
+                <ion-row *ngIf="citiesSelection">
+                  <ion-col size="12">
+                    <ion-select placeholder="Select City">
+                      <ion-select-option *ngFor="let city of cities">
+                        {{city}}
+                      </ion-select-option>
+                    </ion-select>
+                  </ion-col>
+                </ion-row>
+              </div>
+            </ion-item>
+            <ion-item lines="none" class="ion-no-padding">
+              <div class="input-group">
+                <ion-label>Properties Types Work In?</ion-label>
+              </div>
+            </ion-item>
+            <div class="input-group">
+              <ion-row class="property">
+                <ion-col size="6">
+                  <ion-checkbox></ion-checkbox>
+                  <ion-label>House</ion-label>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-checkbox></ion-checkbox>
+                  <ion-label>Apartment</ion-label>
+                </ion-col>
+              </ion-row>
+              <ion-row class="property">
+                <ion-col size="6">
+                  <ion-checkbox></ion-checkbox>
+                  <ion-label>Farm House</ion-label>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-checkbox></ion-checkbox>
+                  <ion-label>Penthouse</ion-label>
+                </ion-col>
+              </ion-row>
+              <ion-row class="property">
+                <ion-col size="6">
+                  <ion-checkbox></ion-checkbox>
+                  <ion-label>Residential Plot</ion-label>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-checkbox></ion-checkbox>
+                  <ion-label>Commercial Plot</ion-label>
+                </ion-col>
+              </ion-row>
+              <ion-row class="property">
+                <ion-col size="6">
+                  <ion-checkbox></ion-checkbox>
+                  <ion-label>Plaza</ion-label>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-checkbox></ion-checkbox>
+                  <ion-label>Shop</ion-label>
+                </ion-col>
+              </ion-row>
+              <ion-row class="property">
+                <ion-col size="6">
+                  <ion-checkbox></ion-checkbox>
+                  <ion-label>Office</ion-label>
+                </ion-col>
+              </ion-row>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="10" offset="1">
+            <div class="form-divider"></div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="section-footer ion-text-center">
+              <h2>PLEASE SUBMIT THE FORM</h2>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="8" offset="2">
+            <div class="ion-text-center">
+              <ion-button 
+                color="primary" 
+                class="btn-normal btn-submit"
+                expand="full">
+                <ion-icon name="checkmark-sharp" class="icon-checkmark"></ion-icon>
+                Submit Form
+              </ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </div>
+</ion-content>
