@@ -1,0 +1,169 @@
+<ion-content>
+  <div class="section section-top">
+    <div class="overlay">
+      <div class="content">
+        <h1>Sell and Rent Out Property</h1>
+        <p>Add Property to get started with ASASA</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section-divider"></div>
+
+  <div class="section section-form">
+    <form [formGroup]="addPropertyForm">
+      <ion-grid class="ion-no-padding" style="margin-top: 20px">
+        <ion-row>
+          <ion-col>
+            <div class="section-head ion-text-center">
+              <h2>ADD PROPERTY</h2>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="selection-btn">
+          <ion-col size="3">
+            <ion-button
+              class="pre-btn btn-sale btn-normal"
+              [class.btn-yes]="selection === 'Sale'"
+              [class.btn-no]="selection === 'Rent'"
+              expand="block"
+              (click)="selectSale()"
+            >
+              Sale
+            </ion-button>
+          </ion-col>
+          <ion-col size="3">
+            <ion-button
+              class="pre-btn btn-rent btn-normal btn-no"
+              [class.btn-yes]="selection === 'Rent'"
+              [class.btn-no]="selection === 'Sale'"
+              expand="block"
+              (click)="selectRent()"
+            >
+              Rent
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <div class="input-group">
+              <ion-label>Name<span class="sterik">*</span></ion-label>
+              <ion-input class="input-control input"></ion-input>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <div class="input-group">
+              <ion-label>Email<span class="sterik">*</span></ion-label>
+              <ion-input class="input-control input"></ion-input>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <div class="input-group">
+              <ion-label
+                >Mobile Number<span class="sterik">*</span></ion-label
+              >
+              <ion-input class="input-control input"></ion-input>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <div class="input-group">
+              <ion-label>Enter City<span class="sterik">*</span></ion-label>
+              <ion-input class="input-control input"></ion-input>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <div class="input-group">
+              <ion-label
+                >Enter Property Details<span class="sterik"
+                  >*</span
+                ></ion-label
+              >
+              <ion-input class="input-control input"></ion-input>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <div class="input-group">
+              <ion-label>Select Property Type<span class="sterik">*</span></ion-label>
+              <ion-select
+                class="input-control input"
+              >
+                <ion-select-option *ngFor="let property of propertyTypes">
+                  {{property}}
+                </ion-select-option>
+              </ion-select>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <div class="input-group">
+              <ion-label>Land Area<span class="sterik">*</span></ion-label>
+              <ion-input class="input-control input"></ion-input>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <div class="input-group">
+              <ion-label
+                >Select Land Area Unit<span class="sterik"
+                  >*</span
+                ></ion-label
+              >
+              <ion-select
+                class="input-control input"
+              >
+                <ion-select-option *ngFor="let area of areaUnits">
+                  {{area}}
+                </ion-select-option>
+              </ion-select>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <div class="input-group">
+              <ion-label>Demand Area<span class="sterik">*</span></ion-label>
+              <ion-input class="input-control input"></ion-input>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <div class="input-group">
+              <ion-label>Type Your Message<span style="font-weight: 700;">...</span>
+                <span class="sterik">*</span></ion-label>
+              <ion-textarea
+                rows="3"
+                class="input-control"
+              ></ion-textarea>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-padding-top">
+          <ion-col size="10" offset="1">
+            <div class="ion-text-center">
+              <ion-button
+                color="primary"
+                class="btn-normal btn-submit"
+                expand="block"
+              >
+                Add Property
+              </ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </div>
+</ion-content>

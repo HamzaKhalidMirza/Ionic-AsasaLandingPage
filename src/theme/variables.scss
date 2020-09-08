@@ -25,21 +25,27 @@
   font-weight: normal;
   src: url('../assets/fonts/workSans-VariableFont_wght.ttf');
 }
+@font-face {
+  font-family: 'KumbhSans-Light';
+  font-style: bold;
+  font-weight: normal;
+  src: url('../assets/fonts//KumbhSans-Light.ttf');
+}
 
 // * {
 // }
 h1, ion-button {
   font-family: 'Oswald-Bold';
 }
-span, .btn-normal, h2, h3, h4, h5, h6, ion-item, ion-title {
-  font-family: 'Oswald' !important;
+span, .btn-normal, h2, h3, h4, h5, h6, ion-item, ion-title, ion-label {
+  font-family: 'KumbhSans-Light' !important;
 }
 p {
   font-family: 'Work-Sans';
 }
 /** Ionic CSS Variables **/
 :root {
-  --ion-color-primary: #19bda1;
+  --ion-color-primary: #38bba2;
   --ion-color-primary-rgb: 29,204,175;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 0,0,0;
