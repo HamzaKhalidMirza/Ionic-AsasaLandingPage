@@ -108,6 +108,9 @@
       --placeholder-color: #333;
       --placeholder-opacity: 1;
     }
+    .input-error {
+      border: 1px solid #CD5C5C;
+    }
     .input-control.input {
       height: 40px;
     }

@@ -48,7 +48,12 @@
           <ion-col size="12">
             <div class="input-group">
               <ion-label>Name<span class="sterik">*</span></ion-label>
-              <ion-input class="input-control input"></ion-input>
+              <ion-input
+                type="text"
+                formControlName="userName"
+                class="input-control input"
+                [class.input-error]="Username.invalid && (Username.dirty || Username.touched)"
+              ></ion-input>
             </div>
           </ion-col>
         </ion-row>
@@ -56,17 +61,25 @@
           <ion-col size="12">
             <div class="input-group">
               <ion-label>Email<span class="sterik">*</span></ion-label>
-              <ion-input class="input-control input"></ion-input>
+              <ion-input
+                type="email"
+                formControlName="email"
+                [class.input-error]="Email.invalid && (Email.dirty || Email.touched)"
+                class="input-control input"
+              ></ion-input>
             </div>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col size="12">
             <div class="input-group">
-              <ion-label
-                >Mobile Number<span class="sterik">*</span></ion-label
-              >
-              <ion-input class="input-control input"></ion-input>
+              <ion-label>Mobile Number<span class="sterik">*</span></ion-label>
+              <ion-input
+                type="number"
+                formControlName="mobileNo"
+                [class.input-error]="MobileNo.invalid && (MobileNo.dirty || MobileNo.touched)"
+                class="input-control input"
+              ></ion-input>
             </div>
           </ion-col>
         </ion-row>
@@ -74,7 +87,12 @@
           <ion-col size="12">
             <div class="input-group">
               <ion-label>Enter City<span class="sterik">*</span></ion-label>
-              <ion-input class="input-control input"></ion-input>
+              <ion-input
+                type="text"
+                formControlName="city"
+                [class.input-error]="City.invalid && (City.dirty || City.touched)"
+                class="input-control input"
+              ></ion-input>
             </div>
           </ion-col>
         </ion-row>
@@ -82,20 +100,27 @@
           <ion-col size="12">
             <div class="input-group">
               <ion-label
-                >Enter Property Details<span class="sterik"
-                  >*</span
-                ></ion-label
+                >Enter Property Details<span class="sterik">*</span></ion-label
               >
-              <ion-input class="input-control input"></ion-input>
+              <ion-input
+                type="text"
+                formControlName="propertyDetails"
+                [class.input-error]="PropertyDetails.invalid && (PropertyDetails.dirty || PropertyDetails.touched)"
+                class="input-control input"
+              ></ion-input>
             </div>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col size="12">
             <div class="input-group">
-              <ion-label>Select Property Type<span class="sterik">*</span></ion-label>
+              <ion-label
+                >Select Property Type<span class="sterik">*</span></ion-label
+              >
               <ion-select
                 class="input-control input"
+                [class.input-error]="PropertyType.invalid && (PropertyType.dirty || PropertyType.touched)"
+                formControlName="propertyType"
               >
                 <ion-select-option *ngFor="let property of propertyTypes">
                   {{property}}
@@ -108,7 +133,13 @@
           <ion-col size="12">
             <div class="input-group">
               <ion-label>Land Area<span class="sterik">*</span></ion-label>
-              <ion-input class="input-control input"></ion-input>
+              <ion-input
+                type="number"
+                min="0"
+                formControlName="landArea"
+                [class.input-error]="LandArea.invalid && (LandArea.dirty || LandArea.touched)"
+                class="input-control input"
+              ></ion-input>
             </div>
           </ion-col>
         </ion-row>
@@ -116,12 +147,12 @@
           <ion-col size="12">
             <div class="input-group">
               <ion-label
-                >Select Land Area Unit<span class="sterik"
-                  >*</span
-                ></ion-label
+                >Select Land Area Unit<span class="sterik">*</span></ion-label
               >
               <ion-select
                 class="input-control input"
+                [class.input-error]="LandAreaUnit.invalid && (LandAreaUnit.dirty || LandAreaUnit.touched)"
+                formControlName="landAreaUnit"
               >
                 <ion-select-option *ngFor="let area of areaUnits">
                   {{area}}
@@ -133,18 +164,27 @@
         <ion-row>
           <ion-col size="12">
             <div class="input-group">
-              <ion-label>Demand Area<span class="sterik">*</span></ion-label>
-              <ion-input class="input-control input"></ion-input>
+              <ion-label>Demand<span class="sterik">*</span></ion-label>
+              <ion-input
+                type="number"
+                formControlName="demand"
+                [class.input-error]="Demand.invalid && (Demand.dirty || Demand.touched)"
+                class="input-control input"
+              ></ion-input>
             </div>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col size="12">
             <div class="input-group">
-              <ion-label>Type Your Message<span style="font-weight: 700;">...</span>
-                <span class="sterik">*</span></ion-label>
+              <ion-label
+                >Type Your Message<span style="font-weight: 700">...</span>
+                <span class="sterik">*</span></ion-label
+              >
               <ion-textarea
+                type="text"
                 rows="3"
+                formControlName="message"
                 class="input-control"
               ></ion-textarea>
             </div>
@@ -155,6 +195,9 @@
             <div class="ion-text-center">
               <ion-button
                 color="primary"
+                [disabled]="addPropertyForm.invalid"
+                (click)="addProperty()"
+                type="submit"
                 class="btn-normal btn-submit"
                 expand="block"
               >
