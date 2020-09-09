@@ -17,7 +17,12 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FontAwesomeModule],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    FontAwesomeModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,

@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'add-property',
     loadChildren: () => import('./add-property/add-property.module').then( m => m.AddPropertyPageModule)
   },
+  {
+    path: 'add-testimonial',
+    loadChildren: () => import('./add-testimonial/add-testimonial.module').then( m => m.AddTestimonialPageModule)
+  },
 ];
 
 @NgModule({
